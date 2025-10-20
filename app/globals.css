@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@source "../node_modules/streamdown/dist/index.js";
+
+@layer base {
+  :root {
+    /* Deep purple theme inspired by Echo Mind design */
+    --background: 264 60% 10%; /* Deep purple navy #1a0d2e */
+    --foreground: 0 0% 98%; /* Near white text */
+    --card: 264 45% 18%; /* Slightly lighter purple #2d1b4e */
+    --card-foreground: 0 0% 95%; /* Off-white text */
+    --popover: 264 50% 15%; /* Card variant */
+    --popover-foreground: 0 0% 95%; /* Off-white text */
+    --primary: 264 85% 65%; /* Vibrant purple #8b5cf6 */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
+    --secondary: 264 40% 25%; /* Muted purple card */
+    --secondary-foreground: 0 0% 95%; /* Light text */
+    --muted: 264 30% 22%; /* Very muted purple */
+    --muted-foreground: 264 15% 70%; /* Muted text */
+    --accent: 264 85% 65%; /* Bright purple accent */
+    --accent-foreground: 0 0% 100%; /* White on accent */
+    --destructive: 0 72% 51%; /* Red for errors */
+    --destructive-foreground: 0 0% 98%; /* Light text */
+    --border: 264 30% 30%; /* Subtle purple border */
+    --input: 264 40% 25%; /* Input background */
+    --ring: 264 85% 65%; /* Focus ring purple */
+    --radius: 1rem; /* 16px base radius */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Intensity Selector Buttons */
+.intensity-btn {
+  @apply px-6 py-5 rounded-2xl border border-border/60 bg-card/40 backdrop-blur-sm
+         transition-all duration-300 cursor-pointer text-left
+         hover:scale-[1.02] hover:shadow-card-hover hover:border-primary/50
+         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+}
+
+.intensity-btn-mild {
+  @apply hover:bg-emerald-500/10 hover:border-emerald-400/50;
+}
+
+.intensity-btn-moderate {
+  @apply hover:bg-amber-500/10 hover:border-amber-400/50;
+}
+
+.intensity-btn-intense {
+  @apply hover:bg-rose-500/10 hover:border-rose-400/50;
+}
+
+/* Intensity Badge */
+.intensity-badge {
+  @apply px-4 py-1.5 rounded-full text-sm font-medium border backdrop-blur-sm
+         transition-all duration-200;
+}
+
+.intensity-badge-mild {
+  @apply bg-emerald-500/20 text-emerald-200 border-emerald-400/30;
+}
+
+.intensity-badge-moderate {
+  @apply bg-amber-500/20 text-amber-200 border-amber-400/30;
+}
+
+.intensity-badge-intense {
+  @apply bg-rose-500/20 text-rose-200 border-rose-400/30;
+}
